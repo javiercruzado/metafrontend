@@ -1,17 +1,16 @@
+@import url(index.css);
+
 header {
     grid-area: header;
-}
-
-@media screen and (max-width: 32em) {
-    header {
-        background-color: gray;
-    }
 }
 
 nav {
     grid-area: nav;
     display: flex;
     flex-direction: row;
+    width: 64%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav ul {
@@ -22,12 +21,24 @@ nav ul {
     text-decoration: none;
 }
 
+@media screen and (max-width: 32em) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
 nav li {
     display: inline;
 }
 
 nav a {
     text-decoration: none;
+    color: var(--primary-color-1);
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--secondary-color-1);
 }
 
 main {
