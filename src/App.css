@@ -1,0 +1,39 @@
+header {
+    grid-area: header;
+}
+
+@media screen and (max-width: 32em) {
+    header {
+        background-color: gray;
+    }
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    text-decoration: none;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
