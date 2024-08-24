@@ -15,7 +15,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--main-bg-color);
+  background-color: #333333;
 }
 
 code {
@@ -24,8 +24,8 @@ code {
 }
 
 #root {
-  /*background-color: #EDEFEE;*/
-
+  background-color: var(--main-bg-color);
+  border-radius: 5px;
   display: grid;
   row-gap: 1em;
   grid-template-areas:
@@ -33,5 +33,9 @@ code {
     "nav"
     "main"
     "footer";
-  width: 100%;
+    grid-auto-rows: min-content;
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
 }

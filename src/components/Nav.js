@@ -6,7 +6,7 @@ const Nav = () => {
       <img src={Logo} alt="logo"></img>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <a href="#">About</a>
@@ -15,7 +15,7 @@ const Nav = () => {
           <a href="#">Menu</a>
         </li>
         <li>
-          <a href="#">Reservations</a>
+          <a href="/booking">Reservations</a>
         </li>
         <li>
           <a href="#">Order Online</a>
