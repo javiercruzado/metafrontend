@@ -1,0 +1,5 @@
+@import url(../../../index.css);
+
+.home-page-section {
+    grid-column: 2 / span 3;
+}

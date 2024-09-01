@@ -1,7 +1,9 @@
+import "./HomePage.css";
+
 const HomePage = () => {
   return (
     <>
-      <section>
+      <section className="main-section home-page-section">
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
         <p>

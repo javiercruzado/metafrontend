@@ -1,18 +1,19 @@
 body {
-  --main-bg-color: #EDEFEE;
-  --primary-color-1: #495E57;
-  --primary-color-2: #F4CE57;
-  --secondary-color-1: #EE9972;
-  --secondary-color-2: #FBDABB;
-  --highlight-color-1: #EDEFEE;
+  --main-bg-color: #edefee;
+  --primary-color-1: #495e57;
+  --primary-color-2: #f4ce57;
+  --secondary-color-1: #ee9972;
+  --secondary-color-2: #fbdabb;
+  --highlight-color-1: #edefee;
   --highlight-color-2: #333333;
+  --highlight-color-3: #11bbff;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Karla", "Markazi Text", " Segoe UI", " Roboto", " Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Karla", "Markazi Text",
+    " Segoe UI", " Roboto", " Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #333333;
@@ -24,6 +25,7 @@ code {
 }
 
 #root {
+  font-family: 'Markazi Text', sans-serif;
   background-color: var(--main-bg-color);
   border-radius: 5px;
   display: grid;
@@ -33,9 +35,9 @@ code {
     "nav"
     "main"
     "footer";
-    grid-auto-rows: min-content;
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100vh;
+  grid-auto-rows: min-content;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
 }
