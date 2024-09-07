@@ -3,13 +3,15 @@ import { useReducer } from "react";
 import BookingPage from "./main/bookingpage/BookingPage";
 import HomePage from "./main/homepage/HomePage";
 
+export const initializeTimes = () => {
+  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+};
+
+export const updateTimes = (date) => {
+  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+};
+
 const Main = () => {
-  const initializeTimes = () => {
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  };
-  const updateTimes = (date) => {
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  };
 
   const [availableTimes, availableTimesDispatch] = useReducer(
     updateTimes,

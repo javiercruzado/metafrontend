@@ -1,10 +1,12 @@
-import { useState } from "react";
 import BookingForm from "./BookingForm";
 import "./BookingPage.css";
 
 const BookingPage = (props) => {
-  const { availableTimes } = props;
-  const [bookingInfo, setBookingInfo] = useState({});
+  const { availableTimes, availableTimesDispatch } = props;
+
+  const handleSubmit = (bookingInfo) => {
+    console.log("handleSubmit ", bookingInfo);
+  };
 
   return (
     <section className="main-section book-page-section">
@@ -14,9 +16,9 @@ const BookingPage = (props) => {
         Please enter the information required to book enter your reservation
       </p>
       <BookingForm
-        bookingInfo={bookingInfo}
-        setBookingInfo={setBookingInfo}
         availableTimes={availableTimes}
+        handleSubmit={handleSubmit}
+        availableTimesDispatch={availableTimesDispatch}
       />
     </section>
   );
