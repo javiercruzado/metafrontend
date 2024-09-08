@@ -2,17 +2,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useReducer } from "react";
 import BookingPage from "./main/bookingpage/BookingPage";
 import HomePage from "./main/homepage/HomePage";
+import { fetchAPI } from "../api/api";
 
 export const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  return fetchAPI(new Date());
 };
 
-export const updateTimes = (date) => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+export const updateTimes = (state, action) => {
+  return fetchAPI(action.date);
 };
 
 const Main = () => {
-
   const [availableTimes, availableTimesDispatch] = useReducer(
     updateTimes,
     initializeTimes(),

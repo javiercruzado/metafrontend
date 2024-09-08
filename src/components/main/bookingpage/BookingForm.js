@@ -25,8 +25,8 @@ const BookingForm = (props) => {
           id="res-date"
           value={bookingInfo.Date}
           onChange={(evt) => {
+            availableTimesDispatch({ date: new Date(evt.target.value) });
             setBookingInfo({ ...bookingInfo, Date: evt.target.value });
-            availableTimesDispatch();
           }}
         />
         <label htmlFor="res-time">Choose time</label>
