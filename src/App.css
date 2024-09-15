@@ -53,10 +53,6 @@ main {
     gap: 12px;
 }
 
-/* main .main-section {
-  grid-column: 2 / span 3;
-} */
-
 main #hero-image {
     grid-column: 6 / span 4;
     background-image: url("/src/assets/restauranfood.jpg");

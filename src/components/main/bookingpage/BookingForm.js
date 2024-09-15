@@ -1,20 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BookingSlot from "./BookingSlot";
 
 const BookingForm = (props) => {
-  const { availableTimes, availableTimesDispatch, handleSubmit } = props;
+  const { availableTimes, availableTimesDispatch, handleSubmit, updateTimes } =
+    props;
 
+  const [timeOptions, setTimeOptions] = useState([]);
   const [bookingInfo, setBookingInfo] = useState({
-    Date: "",
+    Date: new Date().toISOString().substring(0, 10),
     Time: "",
     NumberGuest: 1,
     Ocassion: "",
   });
 
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit(bookingInfo);
   };
+
+  useEffect(() => {
+    let times = updateTimes(selectedDate);
+    availableTimesDispatch({ times: times });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedDate]);
+
+  useEffect(() => {
+    let options = availableTimes.map((x) => <BookingSlot key={x} time={x} />);
+    setTimeOptions(options);
+  }, [availableTimes]);
 
   return (
     <>
@@ -25,7 +40,7 @@ const BookingForm = (props) => {
           id="res-date"
           value={bookingInfo.Date}
           onChange={(evt) => {
-            availableTimesDispatch({ date: new Date(evt.target.value) });
+            setSelectedDate(new Date(evt.target.value));
             setBookingInfo({ ...bookingInfo, Date: evt.target.value });
           }}
         />
@@ -37,9 +52,7 @@ const BookingForm = (props) => {
             setBookingInfo({ ...bookingInfo, Time: evt.target.value });
           }}
         >
-          {availableTimes.map((x) => (
-            <BookingSlot key={x} time={x} />
-          ))}
+          {timeOptions}
         </select>
         <label htmlFor="guests">Number of guests</label>
         <input

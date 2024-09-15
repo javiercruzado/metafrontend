@@ -16,7 +16,7 @@ form {
 form>label {
     display: flex;
     align-items: center;
-    grid-column: 1 / span 1;    
+    grid-column: 1 / span 1;
     font-size: 18px;
     font-weight: 600;
     color: var(--main-bg-color);

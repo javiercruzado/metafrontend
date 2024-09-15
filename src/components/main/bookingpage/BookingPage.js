@@ -2,10 +2,11 @@ import BookingForm from "./BookingForm";
 import "./BookingPage.css";
 
 const BookingPage = (props) => {
-  const { availableTimes, availableTimesDispatch } = props;
+  const { availableTimes, availableTimesDispatch, submitForm, updateTimes } =
+    props;
 
   const handleSubmit = (bookingInfo) => {
-    console.log("handleSubmit ", bookingInfo);
+    submitForm(bookingInfo);
   };
 
   return (
@@ -19,6 +20,7 @@ const BookingPage = (props) => {
         availableTimes={availableTimes}
         handleSubmit={handleSubmit}
         availableTimesDispatch={availableTimesDispatch}
+        updateTimes={updateTimes}
       />
     </section>
   );
