@@ -1,3 +1,5 @@
+import { readFromLocalStorage, saveToLocalStore } from "./storage";
+
 const seededRandom = function (seed) {
   var m = 2 ** 35 - 31;
   var a = 185852;
@@ -24,7 +26,16 @@ const fetchAPI = function (date) {
 };
 
 const submitAPI = function (formData) {
+  saveReservation(formData);
   return true;
 };
+
+const saveReservation = (formData) => {
+  let reservations = readFromLocalStorage();
+  reservations.push(formData);
+  saveToLocalStore(JSON.stringify(reservations));
+};
+
+
 
 export { submitAPI, fetchAPI };
