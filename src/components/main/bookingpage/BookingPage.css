@@ -24,4 +24,14 @@ form>label {
 
 form>input {
     grid-column: 2 / span 3;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0;
+    border-radius: 10px;
+}
+
+form>select {
+    padding-left: 10px;
+    border: 0;
+    border-radius: 10px;
 }

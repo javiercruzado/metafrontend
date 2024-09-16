@@ -74,6 +74,7 @@ const BookingForm = (props) => {
             setBookingInfo({ ...bookingInfo, Ocassion: evt.target.value });
           }}
         >
+          <option selected>Select an occasion</option>
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
