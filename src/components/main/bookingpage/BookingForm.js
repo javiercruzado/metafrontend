@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BookingSlot from "./BookingSlot";
 import FormInput from "../../../shared/FormInput";
+import { DateISOFormat } from "../../../api/utils";
 
 const BookingForm = (props) => {
   const { availableTimes, availableTimesDispatch, handleSubmit, updateTimes } =
@@ -8,7 +9,7 @@ const BookingForm = (props) => {
 
   const [timeOptions, setTimeOptions] = useState([]);
   const [bookingInfo, setBookingInfo] = useState({
-    Date: new Date().toISOString().substring(0, 10),
+    Date: DateISOFormat(new Date()),
     Time: "",
     NumberGuest: 2,
     Ocassion: "",
@@ -61,21 +62,23 @@ const BookingForm = (props) => {
   const validate = () => {
     let dateIsValid = true;
     let dateValidationMessage = "";
-    if (new Date(bookingInfo.Date) <= new Date()) {
+    if (bookingInfo.Date <= DateISOFormat(new Date())) {
       dateIsValid = false;
-      dateValidationMessage = "Reservations are available for dates starting tomorrow";
+      dateValidationMessage =
+        "Reservations are available for dates starting tomorrow";
     }
 
     let isNumberOfGuestIsValid = true;
-    let numberOfGuestValidationMessage = ""
+    let numberOfGuestValidationMessage = "";
     if (Number(bookingInfo.NumberGuest) < 2) {
       isNumberOfGuestIsValid = false;
-      numberOfGuestValidationMessage = "Reserve a table for more than one person";
+      numberOfGuestValidationMessage =
+        "Reserve a table for more than one person";
     }
 
     let isOcassionValid = true;
     let ocassionValidationMessage = "";
-    if (bookingInfo.Ocassion === '') {
+    if (bookingInfo.Ocassion === "") {
       isOcassionValid = false;
       ocassionValidationMessage = "Choose an ocassion";
     }
@@ -98,8 +101,8 @@ const BookingForm = (props) => {
       },
     });
 
-    return dateIsValid && isOcassionValid && isOcassionValid
-  }
+    return dateIsValid && isOcassionValid && isOcassionValid;
+  };
 
   return (
     <>
