@@ -154,7 +154,7 @@ const BookingForm = (props) => {
             <option>Anniversary</option>
           </select>
         </FormInput>
-        <button type="submit" id="submitForm">
+        <button type="submit" id="submitForm" aria-label="On Click">
           Make Your reservation
         </button>
       </form>
