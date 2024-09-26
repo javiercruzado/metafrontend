@@ -1,0 +1,8 @@
+@import url(../../../index.css);
+
+.about-page-section {
+    grid-column: 3 / span 6;
+    text-align: center;
+    min-height: 4rem;
+    background-color: var(--main-bg-color);
+}

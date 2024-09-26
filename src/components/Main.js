@@ -4,6 +4,10 @@ import { fetchAPI, submitAPI } from "../api/api";
 import BookingPage from "./main/bookingpage/BookingPage";
 import ConfirmedBooking from "./main/bookingpage/ConfirmedBooking";
 import HomePage from "./main/homepage/HomePage";
+import AboutPage from "./main/aboutpage/AboutPage";
+import MenuPage from "./main/menupage/MenuPage";
+import OrderOnline from "./main/orderonlinepage/OrderOnline";
+import LoginPage from "./main/loginpage/LoginPage";
 
 const fetchData = (api, date) => {
   function fetch() {
@@ -58,6 +62,9 @@ const Main = () => {
     <main>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="/about" element={<AboutPage />}></Route>
+        <Route path="/menu" element={<MenuPage />}></Route>
+        <Route path="/order-online" element={<OrderOnline />}></Route>
         <Route
           path="/booking"
           element={
@@ -70,6 +77,7 @@ const Main = () => {
           }
         ></Route>
         <Route path="/confirmedbooking" element={<ConfirmedBooking />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
       </Routes>
     </main>
   );
