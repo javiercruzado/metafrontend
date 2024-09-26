@@ -1,5 +1,72 @@
 @import url(../../../index.css);
 
+.main-section {
+    background-color: var(--primary-color-1);
+    display: grid;
+    grid-template-columns: 3fr repeat(8, 1fr) 3fr;
+    grid-auto-rows: minmax(40px, auto);
+    gap: 12px;
+    padding-bottom: 20px;
+}
+
+#hero-image {
+    grid-column: 6 / span 4;
+    background-image: url("/src/assets/restauranfood.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+    margin-bottom: -48px;
+    margin-left: 50px;
+}
+
+.main-section h1 {
+    font-family: "Markazi Text; serif";
+    color: var(--primary-color-2);
+    font-size: 40px;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.main-section h2 {
+    font-family: "Markazi Text; sans-serif";
+    color: var(--main-bg-color);
+    margin-top: 2px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.main-section p {
+    color: var(--main-bg-color);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+
 .home-page-section {
     grid-column: 2 / span 3;
+}
+
+.home-week-specials {
+    display: grid;
+    grid-template-columns: 3fr repeat(8, 1fr) 3fr;
+    grid-auto-rows: minmax(40px, auto);
+    gap: 12px;
+    margin-top: 4rem;
+}
+
+#h-week-specials {
+    grid-column: 2 / span 6;
+    margin-top: 0%;
+}
+
+#b-online-menu {
+    grid-column: 8 / span 2;
+}
+
+.home-week-specials h2 {
+    font-family: "Markazi Text; serif";
+    font-size: 40px;
+    margin-top: 16px;
+    margin-bottom: 0;
 }
