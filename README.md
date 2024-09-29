@@ -1,2 +1,2 @@
 # metafrontend
-Meta FrontEnd Capstone
+Coursera - Meta FrontEnd Capstone Project
