@@ -3,8 +3,11 @@ import MenuSpecial from "../menuespecials/MenuSpecials";
 import Bruchetta from "../../../assets/bruchetta.png";
 import LemonDessert from "../../../assets/lemon dessert.jpg";
 import "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="main-section">
@@ -19,13 +22,20 @@ const HomePage = () => {
             recipes server with a modern <br />
             twist
           </p>
-          <button>Reserve a table</button>
+          <button onClick={() => navigate("/booking")}>Reserve a table</button>
         </article>
         <article id="hero-image"></article>
       </section>
       <section className="header-week-specials">
         <h2 id="h-week-specials">This week specials!</h2>
-        <button id="b-online-menu">Online Menu</button>
+        <button
+          id="b-online-menu"
+          onClick={() => {
+            navigate("/menu");
+          }}
+        >
+          Online Menu
+        </button>
         <div className="week-specials">
           <MenuSpecial
             title={"Greek Salad"}
